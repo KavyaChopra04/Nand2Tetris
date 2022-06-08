@@ -1,0 +1,66 @@
+//while(Address!=0)
+//{
+//	blacken screen
+//}
+@16384
+D=A
+@addr
+M=D
+(LOOP)
+	@KBD
+	D=M
+	@END
+	D;JEQ
+	@KBD
+	D=A
+	@n
+	M=D
+	@addr
+	D=M
+	@i
+	M=D
+	(LOOP1)
+		@i
+		D=M
+		@n
+		D=D-M
+		@LOOP
+		D;JEQ
+		@i
+		A=M
+		M=-1
+		@i
+		M=M+1
+		@LOOP1
+		0;JMP
+	@LOOP
+	0;JMP
+(END)
+	@KBD
+	D=M
+	@LOOP
+	D;JNE
+	@KBD
+	D=A
+	@n
+	M=D
+	@addr
+	D=M
+	@i
+	M=D
+	(LOOP2)
+		@i
+		D=M
+		@n
+		D=D-M
+		@LOOP
+		D;JEQ
+		@i
+		A=M
+		M=0
+		@i
+		M=M+1
+		@LOOP2
+		0;JMP
+	@END
+	0;JMP
